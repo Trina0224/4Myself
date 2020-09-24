@@ -16,3 +16,20 @@ console.log(startTd);
 //Step.3 Apply offset to Generated final unix timestamp. //shift it back to UTC. 
 startTd -= (offset*60); 
 console.log(`Adjusted: ${startTd}`);
+
+
+//From Unix Timestamp to Date
+let timestamp = 1598918400;
+var date = new Date(timestamp * 1000);
+console.log(date);
+var hours = date.getHours();
+var minutes = "0" + date.getMinutes();
+var seconds = "0" + date.getSeconds();
+// time in xx:yy:zz format
+var formatted = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+console.log(formatted);
+
+//or a simple one: It's UTC time. 
+var dateUTC = new Date(timestamp * 1000).toUTCString();
+console.log(dateUTC);
+
